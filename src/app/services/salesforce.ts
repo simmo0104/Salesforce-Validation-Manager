@@ -16,7 +16,7 @@ export interface ValidationRule {
 })
 export class SalesforceService {
   private clientId = '3MVG97L7PWbPq6Uxi_tDifEKFcKK7FYMR2q.o2MYohGQtxP6dsDSo4emNCyIvWhQHtjpeNhDPevAcDbzv5eaq';
-  private redirectUri = 'http://localhost:4200/callback';
+  private redirectUri = `${window.location.origin}/callback`;
   private apiVersion = 'v60.0';
 
   constructor(private http: HttpClient) {}
@@ -73,4 +73,4 @@ export class SalesforceService {
       })
     );
   }
-} // <-- this closing brace for the class was missing
+}
