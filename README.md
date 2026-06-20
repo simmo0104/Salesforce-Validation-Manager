@@ -1,59 +1,90 @@
-# SfValidationManager
+# Salesforce Validation Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.1.
+A web application built using Angular and Salesforce APIs that allows users to authenticate with Salesforce, retrieve validation rules from an Account object, view their status, and manage them through a user-friendly interface.
 
-## Development server
+## Features
 
-To start a local development server, run:
+* Salesforce OAuth 2.0 Login
+* Retrieve Validation Rules using Salesforce Tooling API
+* Display Validation Rule Name and Status (Active/Inactive)
+* Enable or Disable Validation Rules
+* Deploy changes back to Salesforce
+* Responsive Angular UI
+
+## Tech Stack
+
+* Angular
+* TypeScript
+* Salesforce Developer Org
+* Salesforce OAuth 2.0
+* Salesforce Tooling API
+* Salesforce Metadata API
+
+## Salesforce Configuration
+
+### Prerequisites
+
+1. Create a Salesforce Developer Org.
+2. Create a Connected App.
+3. Enable OAuth Settings.
+4. Add the required OAuth scopes:
+
+   * Access and manage your data (api)
+   * Perform requests at any time (refresh_token, offline_access)
+   * Access identity URL service (id)
+
+### Callback URL
+
+For local development:
+
+http://localhost:4200/callback
+
+For production deployment:
+
+lucky-lily-6987d2.netlify.app/callback
+
+### Validation Rules Created
+
+* Phone_required
+* Billing_Country_Required_For_Industry
+* Account_Name_No_All_Numbers
+* Annual_Revenue_Must_Be_Positive
+* Website_must_be_HTTPS
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+cd sf-validation-manager
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open:
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Deployment
 
-```bash
-ng generate component component-name
-```
+Application deployed using Netlify.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Live URL:
 
-```bash
-ng generate --help
-```
+lucky-lily-6987d2.netlify.app
 
-## Building
 
-To build the project run:
+## Author
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Simran Khan
