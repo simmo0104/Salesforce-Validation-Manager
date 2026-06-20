@@ -41,7 +41,7 @@ http://localhost:4200/callback
 
 For production deployment:
 
-lucky-lily-6987d2.netlify.app/callback
+https://lucky-lily-6987d2.netlify.app/callback
 
 ### Validation Rules Created
 
@@ -82,7 +82,7 @@ Application deployed using Netlify.
 
 Live URL:
 
-lucky-lily-6987d2.netlify.app
+https://lucky-lily-6987d2.netlify.app/
 
 
 ## Author
