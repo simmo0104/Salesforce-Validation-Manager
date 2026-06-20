@@ -1,0 +1,44 @@
+<div class="page">
+  <header class="topbar">
+    <h1>Salesforce Validation Rule Manager</h1>
+    <div class="topbar-actions">
+      <button class="btn-secondary" (click)="fetchRules()">Get Validation Rules</button>
+      <button class="btn-text" (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+  <div *ngIf="loading" class="status-msg">Loading...</div>
+  <div *ngIf="error" class="status-msg error">{{ error }}</div>
+
+  <div *ngIf="rules.length > 0" class="panel">
+    <div class="toolbar">
+      <button class="btn-success" (click)="enableAll()">Enable All</button>
+      <button class="btn-danger" (click)="disableAll()">Disable All</button>
+      <button class="btn-primary" (click)="deployChanges()">Deploy Changes</button>
+      <button class="btn-secondary" (click)="rollback()">Rollback to Original</button>
+    </div>
+
+    <table class="rules-table">
+      <thead>
+        <tr>
+          <th>Rule Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rule of rules">
+          <td>{{ rule.ValidationName }}</td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" [checked]="rule.Active" (change)="toggle(rule)" />
+              <span class="slider"></span>
+            </label>
+            <span class="status-label" [class.on]="rule.Active">{{ rule.Active ? 'ON' : 'OFF' }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="rules.length === 0 && !loading" class="empty-msg">Validation Rules will appear here</p>
+</div>
